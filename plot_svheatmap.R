@@ -55,5 +55,7 @@ g <- ggplot(h, aes(variable, bin, fill=rescale)) +
      scale_y_discrete(expand=c(0, 0)) +
      theme_gray(base_size=base_size) +
      theme(legend.position="none", axis.ticks=element_blank(),
+	   panel.grid.major=element_blank(), panel.grid.minor=element_blank(),
+	   panel.background = element_blank(), panel.border = element_blank(),
            axis.text.x=element_text(size=rel(0.8), angle=330, hjust=0, colour="grey50"))
 ggsave('svheatmap.pdf')
