@@ -39,7 +39,7 @@ minloc <- min(d, na.rm=TRUE)
 maxloc <- max(d, na.rm=TRUE)
 bins <- seq(0, maxloc, length=nofbins+1)
 h <- tibble(bin=1:nofbins)
-for (g in names(d)) {
+for (g in sort(names(d))) {
     h[,g] <- as.data.frame(table(cut(d[,g], bins, include.lowest=TRUE)))$Freq
 }
 h <- melt(h, id=c('bin'))
